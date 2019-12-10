@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2019-12-10T13:47:32Z"
+  generation: 1
+  name: customer-primary
+  resourceVersion: "1487288"
+  selfLink: /apis/apps/v1/namespaces/ckkeptnorders-production/deployments/customer
+  uid: 9d8d98c6-1b53-11ea-82ac-42010a840233
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: customer-primary
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: customer-primary
+    spec:
+      containers:
+      - env:
+        - name: DT_CUSTOM_PROP
+          value: keptn_project=ckkeptnorders keptn_service=customer keptn_stage=production
+            keptn_deployment=primary
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: DEPLOYMENT_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.labels['deployment']
+        - name: CONTAINER_IMAGE
+          value: robjahn/keptn-orders-customer-service:1
+        - name: KEPTN_PROJECT
+          value: ckkeptnorders
+        - name: KEPTN_STAGE
+          value: production
+        - name: KEPTN_SERVICE
+          value: customer
+        - name: KEPTN_DEPLOYMENT
+          value: canary
+        image: robjahn/keptn-orders-customer-service:1
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 15
+        name: customer
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 15
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: 500m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
