@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "1"
+    deployment.kubernetes.io/revision: "2"
   creationTimestamp: "2019-12-10T13:17:38Z"
-  generation: 1
+  generation: 2
   name: frontend-primary
-  resourceVersion: "1479854"
+  resourceVersion: "1514409"
   selfLink: /apis/apps/v1/namespaces/ckkeptnorders-production/deployments/frontend
   uid: 700b179a-1b4f-11ea-82ac-42010a840233
 spec:
@@ -43,7 +43,7 @@ spec:
               apiVersion: v1
               fieldPath: metadata.labels['deployment']
         - name: CONTAINER_IMAGE
-          value: robjahn/keptn-orders-front-end:1
+          value: robjahn/keptn-orders-front-end:4
         - name: KEPTN_PROJECT
           value: ckkeptnorders
         - name: KEPTN_STAGE
@@ -52,7 +52,7 @@ spec:
           value: frontend
         - name: KEPTN_DEPLOYMENT
           value: canary
-        image: robjahn/keptn-orders-front-end:1
+        image: robjahn/keptn-orders-front-end:4
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
