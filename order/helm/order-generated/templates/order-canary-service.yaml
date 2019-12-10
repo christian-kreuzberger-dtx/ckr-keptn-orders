@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-12-10T15:11:14Z"
+  name: order-canary
+  resourceVersion: "1507864"
+  selfLink: /api/v1/namespaces/ckkeptnorders-production/services/order
+  uid: 4e83f4e4-1b5f-11ea-82ac-42010a840233
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: order
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
