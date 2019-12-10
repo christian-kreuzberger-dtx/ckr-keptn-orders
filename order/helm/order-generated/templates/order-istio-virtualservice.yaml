@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: order
+spec:
+  gateways:
+  - ckkeptnorders-staging-gateway.ckkeptnorders-staging
+  - mesh
+  hosts:
+  - order.ckkeptnorders-staging.gke.demo.keptn.sh
+  - order
+  http:
+  - route:
+    - destination:
+        host: order.ckkeptnorders-staging.svc.cluster.local
