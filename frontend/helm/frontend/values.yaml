@@ -1,2 +1,2 @@
-image: robjahn/keptn-orders-front-end:1
+image: robjahn/keptn-orders-front-end:ddac5a0c47ff
 replicaCount: 1
