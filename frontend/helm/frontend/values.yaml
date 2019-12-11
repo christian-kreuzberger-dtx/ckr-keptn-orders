@@ -1,2 +1,2 @@
-image: docker.io/nginx:1.17.6-alpine
+image: robjahn/keptn-orders-front-end:1
 replicaCount: 1
