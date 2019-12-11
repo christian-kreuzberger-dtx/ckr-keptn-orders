@@ -2,11 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "3"
+    deployment.kubernetes.io/revision: "5"
   creationTimestamp: "2019-12-10T13:17:38Z"
-  generation: 3
+  generation: 5
+  labels:
+    app: frontend
   name: frontend-primary
-  resourceVersion: "1515950"
+  resourceVersion: "1774588"
   selfLink: /apis/apps/v1/namespaces/ckkeptnorders-production/deployments/frontend
   uid: 700b179a-1b4f-11ea-82ac-42010a840233
 spec:
