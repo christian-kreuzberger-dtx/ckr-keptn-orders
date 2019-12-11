@@ -1,2 +1,2 @@
-image: robjahn/keptn-orders-front-end:ddac5a0c47ff
+image: nginx:1.17.6-alpine
 replicaCount: 1
