@@ -1,2 +1,2 @@
-image: robjahn/keptn-orders-front-end:1
+image: bitnami/nginx:latest
 replicaCount: 1
