@@ -1,2 +1,2 @@
-image: bitnami/nginx:latest
+image: christiankreuzbergerdtx/keptn-orders-front-end:1.2
 replicaCount: 1
