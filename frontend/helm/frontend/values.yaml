@@ -1,2 +1,2 @@
-image: christiankreuzbergerdtx/keptn-orders-frontend-end:1.2
+image: christiankreuzbergerdtx/keptn-orders-front-end:1.2
 replicaCount: 1
