@@ -32,7 +32,7 @@ spec:
             fieldRef:
               fieldPath: metadata.labels['deployment']
         - name: CONTAINER_IMAGE
-          value: robjahn/keptn-orders-customer-service:1
+          value: robjahn/keptn-orders-customer-service:2
         - name: KEPTN_PROJECT
           value: ckkeptnorders
         - name: KEPTN_STAGE
@@ -41,7 +41,7 @@ spec:
           value: customer
         - name: KEPTN_DEPLOYMENT
           value: canary
-        image: robjahn/keptn-orders-customer-service:1
+        image: robjahn/keptn-orders-customer-service:2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
