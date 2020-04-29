@@ -5,7 +5,7 @@ metadata:
   name: order
 spec:
   gateways:
-  - ckkeptnorders-production-gateway.ckkeptnorders-production
+  - public-gateway.istio-system
   - mesh
   hosts:
   - order.ckkeptnorders-production.gke.demo.keptn.sh
