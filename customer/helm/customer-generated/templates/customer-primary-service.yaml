@@ -1,11 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2019-12-10T13:47:32Z"
+  creationTimestamp: null
   name: customer-primary
-  resourceVersion: "1486999"
-  selfLink: /api/v1/namespaces/ckkeptnorders-production/services/customer
-  uid: 9d8b88cf-1b53-11ea-82ac-42010a840233
 spec:
   ports:
   - name: http
@@ -14,7 +11,6 @@ spec:
     targetPort: 8080
   selector:
     app: customer-primary
-  sessionAffinity: None
   type: ClusterIP
 status:
   loadBalancer: {}
