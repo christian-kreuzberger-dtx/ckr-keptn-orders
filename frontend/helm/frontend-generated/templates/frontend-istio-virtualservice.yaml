@@ -5,7 +5,7 @@ metadata:
   name: frontend
 spec:
   gateways:
-  - ckkeptnorders-production-gateway.ckkeptnorders-production
+  - public-gateway.istio-system
   - mesh
   hosts:
   - frontend.ckkeptnorders-production.gke.demo.keptn.sh

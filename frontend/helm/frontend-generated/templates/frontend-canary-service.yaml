@@ -1,11 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2019-12-10T13:17:38Z"
+  creationTimestamp: null
   name: frontend-canary
-  resourceVersion: "1479523"
-  selfLink: /api/v1/namespaces/ckkeptnorders-production/services/frontend
-  uid: 70091e53-1b4f-11ea-82ac-42010a840233
 spec:
   ports:
   - name: http
@@ -14,7 +11,6 @@ spec:
     targetPort: 8080
   selector:
     app: frontend
-  sessionAffinity: None
   type: ClusterIP
 status:
   loadBalancer: {}
